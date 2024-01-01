@@ -30,3 +30,10 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'Ncplwar01'
     publishLocation: 'Container'
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure subscription 1 (da658188-8dcf-4a1d-b406-f6b97f3d35a2)'
+    appType: 'webAppLinux'
+    appName: 'JavaRaviWeb'
+    package: '$(System.DefaultWorkingDirectory)/**/*.war'
+    customDeployFolder: 'ROOT'
